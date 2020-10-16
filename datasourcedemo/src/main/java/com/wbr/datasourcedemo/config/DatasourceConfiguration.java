@@ -20,7 +20,26 @@ public class DatasourceConfiguration {
 	@Bean
 	public DataSource configDatasource(){
 		DruidDataSource dataSource = new DruidDataSource();
+
 		dataSource.setUrl(DatasourceProperties.JDBC_URL);
+		dataSource.setUsername(DatasourceProperties.USER_NAME);
+		dataSource.setPassword(DatasourceProperties.PASSWORD);
+		dataSource.setDriverClassName(DatasourceProperties.DRIVER_CLASS_NAME);
+
+		dataSource.setInitialSize(DatasourceProperties.INITIAL_SIZE);
+		dataSource.setMinIdle(DatasourceProperties.MIN_IDLE);
+		dataSource.setMaxActive(DatasourceProperties.MAX_ACTIVE);
+		dataSource.setMaxWait(DatasourceProperties.MAX_WAIT);
+
+
+		dataSource.setRemoveAbandoned(DatasourceProperties.REMOVE_ABANDONED);
+		dataSource.setMinEvictableIdleTimeMillis(5*60*1000);
+		dataSource.setMaxEvictableIdleTimeMillis(8*60*60*1000);
+		dataSource.setTestWhileIdle(DatasourceProperties.TEST_WHILE_IDLE);
+		dataSource.setTimeBetweenEvictionRunsMillis(DatasourceProperties.TIME_BETWEEN_EVICTION_RUNS);
+		dataSource.setValidationQuery(DatasourceProperties.VALIDATION_QUERY);
+
+		dataSource.setTestOnBorrow(DatasourceProperties.TEST_ON_BORROW);
 		return dataSource;
 	}
 
