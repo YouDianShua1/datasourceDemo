@@ -61,5 +61,15 @@ public class DatasourceProperties {
 	 */
 	public static final boolean TEST_ON_BORROW = false;
 
+	/**
+	 * 单位为ms，如果连接数超过了最小空闲连接数，且此连接的空闲时间大于此值，则关闭此连接
+	 */
+	public static final long MIN_EVICTABLE_IDLE_TIME_MILLIS = 5*60*1000;
+
+	/**
+	 * 单位为ms，如果连接空间时间大于此值，则关闭此连接
+	 */
+	public static final long MAX_EVICTABLE_IDLE_TIME_MILLIS = 8*60*60*1000;
+
 
 }

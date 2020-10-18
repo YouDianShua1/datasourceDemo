@@ -33,8 +33,8 @@ public class DatasourceConfiguration {
 
 
 		dataSource.setRemoveAbandoned(DatasourceProperties.REMOVE_ABANDONED);
-		dataSource.setMinEvictableIdleTimeMillis(5*60*1000);
-		dataSource.setMaxEvictableIdleTimeMillis(8*60*60*1000);
+		dataSource.setMinEvictableIdleTimeMillis(DatasourceProperties.MIN_EVICTABLE_IDLE_TIME_MILLIS);
+		dataSource.setMaxEvictableIdleTimeMillis(DatasourceProperties.MAX_EVICTABLE_IDLE_TIME_MILLIS);
 		dataSource.setTestWhileIdle(DatasourceProperties.TEST_WHILE_IDLE);
 		dataSource.setTimeBetweenEvictionRunsMillis(DatasourceProperties.TIME_BETWEEN_EVICTION_RUNS);
 		dataSource.setValidationQuery(DatasourceProperties.VALIDATION_QUERY);
